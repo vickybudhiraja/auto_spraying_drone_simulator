@@ -1,6 +1,8 @@
 import asyncio
 from mavsdk import System
 
+TAKEOFF_ALTITUDE_M = 22.0
+
 async def main():
     print("Creating System...")
     drone = System()
@@ -15,12 +17,15 @@ async def main():
         if state.is_connected:
             break
 
+    print(f"Setting takeoff altitude to {TAKEOFF_ALTITUDE_M} m...")
+    await drone.action.set_takeoff_altitude(TAKEOFF_ALTITUDE_M)
+
     print("Arming...")
     await drone.action.arm()
 
     print("Taking off...")
     await drone.action.takeoff()
-    await asyncio.sleep(8)
+    await asyncio.sleep(30)
 
     print("Landing...")
     await drone.action.land()

@@ -1,3 +1,4 @@
 outputs/**
 *.png
-
+*.tif
+*.tar.gz

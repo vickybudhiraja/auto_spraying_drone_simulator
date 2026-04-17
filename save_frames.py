@@ -6,7 +6,7 @@ from rclpy.qos import qos_profile_sensor_data
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 
-TOPIC = "/world/real_patch/model/x500_mono_cam_down_0/link/camera_link/sensor/camera/image"
+TOPIC = "/world/real_terrain/model/x500_mono_cam_down_0/link/camera_link/sensor/camera/image"
 OUT_DIR = "/work/outputs/frames"
 SAVE_EVERY_N = 10
 

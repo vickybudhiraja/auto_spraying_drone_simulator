@@ -1,0 +1,37 @@
+INFO  [init] Waiting for Gazebo world...
+[Err] [CustomMeshShape.cc:144] [dartsim::CustomMeshShape] One of the submeshes [0:terrain_mesh] in the input mesh [/opt/px4-gazebo/share/gz/worlds] does not have a normal count [0] that matches its vertex count [15552]. This submesh will be ignored!
+Stack trace (most recent call last):
+#31   Object "/lib/x86_64-linux-gnu/libruby-3.2.so.3.2", at 0x7ad01ef00e2b, in 
+#30   Object "/lib/x86_64-linux-gnu/libruby-3.2.so.3.2", at 0x7ad01f0a3b49, in rb_vm_exec
+#29   Object "/lib/x86_64-linux-gnu/libruby-3.2.so.3.2", at 0x7ad01f0a062b, in 
+#28   Object "/lib/x86_64-linux-gnu/libruby-3.2.so.3.2", at 0x7ad01f09c13e, in 
+#27   Object "/lib/x86_64-linux-gnu/libruby-3.2.so.3.2", at 0x7ad01f09992f, in 
+#26   Object "/usr/lib/x86_64-linux-gnu/ruby/3.2.0/fiddle.so", at 0x7ad01a337b13, in 
+#25   Object "/lib/x86_64-linux-gnu/libruby-3.2.so.3.2", at 0x7ad01f06237b, in rb_nogvl
+#24   Object "/usr/lib/x86_64-linux-gnu/ruby/3.2.0/fiddle.so", at 0x7ad01a33743b, in 
+#23   Object "/lib/x86_64-linux-gnu/libffi.so.8", at 0x7ad01a2490bd, in ffi_call
+#22   Object "/lib/x86_64-linux-gnu/libffi.so.8", at 0x7ad01a2463ee, in 
+#21   Object "/lib/x86_64-linux-gnu/libffi.so.8", at 0x7ad01a249b15, in 
+#20   Object "/usr/lib/x86_64-linux-gnu/libgz-sim8-gz.so.8.11.0", at 0x7ad01971a3df, in runServer
+#19   Object "/lib/x86_64-linux-gnu/libgz-sim8.so.8", at 0x7ad0193fbbfc, in 
+#18   Object "/lib/x86_64-linux-gnu/libgz-sim8.so.8", at 0x7ad019409e9e, in gz::sim::v8::SimulationRunner::Run(unsigned long)
+#17   Object "/lib/x86_64-linux-gnu/libgz-sim8.so.8", at 0x7ad019408fe5, in gz::sim::v8::SimulationRunner::Step(gz::sim::v8::UpdateInfo const&)
+#16   Object "/lib/x86_64-linux-gnu/libgz-sim8.so.8", at 0x7ad01940592c, in gz::sim::v8::SimulationRunner::UpdateSystems()
+#15   Object "/usr/lib/x86_64-linux-gnu/gz-sim-8/plugins/libgz-sim-physics-system.so", at 0x7ad00d8aca8f, in gz::sim::v8::systems::Physics::Update(gz::sim::v8::UpdateInfo const&, gz::sim::v8::EntityComponentManager&)
+#14   Object "/usr/lib/x86_64-linux-gnu/gz-sim-8/plugins/libgz-sim-physics-system.so", at 0x7ad00d8a1e05, in gz::sim::v8::systems::PhysicsPrivate::Step(std::chrono::duration<long, std::ratio<1l, 1000000000l> > const&)
+#13   Object "/usr/lib/x86_64-linux-gnu/gz-physics-7/engine-plugins/libgz-physics-dartsim-plugin.so", at 0x7acffc41e315, in gz::physics::dartsim::SimulationFeatures::WorldForwardStep(gz::physics::Identity const&, gz::physics::SpecifyData<gz::physics::RequireData<gz::physics::WorldPoses>, gz::physics::ExpectData<gz::physics::ChangedWorldPoses, gz::physics::Contacts, gz::physics::JointPositions> >&, gz::physics::CompositeData&, gz::physics::ExpectData<gz::physics::ApplyExternalForceTorques, gz::physics::ApplyGeneralizedForces, gz::physics::VelocityControlCommands, gz::physics::ServoControlCommands, std::chrono::duration<long, std::ratio<1l, 1000000000l> > > const&)
+#12   Object "/lib/x86_64-linux-gnu/libdart.so.6.13", at 0x7acff7e2066c, in dart::simulation::World::step(bool)
+#11   Object "/lib/x86_64-linux-gnu/libdart.so.6.13", at 0x7acff7e063d5, in dart::constraint::ConstraintSolver::solve()
+#10   Object "/lib/x86_64-linux-gnu/libdart.so.6.13", at 0x7acff7e04970, in dart::constraint::ConstraintSolver::updateConstraints()
+#9    Object "/lib/x86_64-linux-gnu/libdart.so.6.13", at 0x7acff7dd7054, in dart::collision::CollisionGroup::collide(dart::collision::CollisionOption const&, dart::collision::CollisionResult*)
+#8    Object "/lib/x86_64-linux-gnu/libdart.so.6.13", at 0x7acff7dd6fcb, in dart::collision::CollisionGroup::update()
+#7    Object "/lib/x86_64-linux-gnu/libdart.so.6.13", at 0x7acff7dd6443, in dart::collision::CollisionGroup::updateSkeletonSource(std::pair<dart::dynamics::MetaSkeleton const* const, dart::collision::CollisionGroup::CollisionSource<std::weak_ptr<dart::dynamics::MetaSkeleton const>, dart::dynamics::BodyNode> >&)
+#6    Object "/lib/x86_64-linux-gnu/libdart.so.6.13", at 0x7acff7dd59c1, in dart::collision::CollisionGroup::addShapeFrameImpl(dart::dynamics::ShapeFrame const*, void const*)
+#5    Object "/lib/x86_64-linux-gnu/libdart.so.6.13", at 0x7acff7dd1c0f, in dart::collision::CollisionDetector::claimCollisionObject(dart::dynamics::ShapeFrame const*)
+#4    Object "/lib/x86_64-linux-gnu/libdart.so.6.13", at 0x7acff7dd1d18, in dart::collision::CollisionDetector::ManagerForUnsharableCollisionObjects::claimCollisionObject(dart::dynamics::ShapeFrame const*)
+#3    Object "/lib/x86_64-linux-gnu/libdart-collision-ode.so.6.13", at 0x7acffc167802, in dart::collision::OdeCollisionDetector::createCollisionObject(dart::dynamics::ShapeFrame const*)
+#2    Object "/lib/x86_64-linux-gnu/libdart-collision-ode.so.6.13", at 0x7acffc176767, in dart::collision::OdeCollisionObject::OdeCollisionObject(dart::collision::OdeCollisionDetector*, dart::dynamics::ShapeFrame const*)
+#1    Object "/lib/x86_64-linux-gnu/libdart-collision-ode.so.6.13", at 0x7acffc175f62, in dart::collision::detail::OdeMesh::OdeMesh(dart::collision::OdeCollisionObject const*, aiScene const*, Eigen::Matrix<double, 3, 1, 0, 3, 1> const&)
+#0    Object "/lib/x86_64-linux-gnu/libdart-collision-ode.so.6.13", at 0x7acffc175b47, in dart::collision::detail::OdeMesh::fillArrays(aiScene const*, Eigen::Matrix<double, 3, 1, 0, 3, 1> const&)
+Segmentation fault (Address not mapped to object [0x4])
+INFO  [init] Waiting for Gazebo world...

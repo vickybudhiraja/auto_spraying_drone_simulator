@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <world name="real_terrain">
+    <gravity>0 0 -9.81</gravity>
+
+    <physics name="1ms" type="ode">
+      <max_step_size>0.004</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>250</real_time_update_rate>
+    </physics>
+
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+
+    <scene>
+      <ambient>1 1 1 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>false</shadows>
+    </scene>
+
+    <light type="directional" name="sun">
+      <cast_shadows>false</cast_shadows>
+      <pose>0 0 1000 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <direction>-0.3 0.1 -0.95</direction>
+    </light>
+
+    <model name="terrain_model">
+      <static>true</static>
+      <link name="terrain_link">
+        <collision name="terrain_collision">
+          <geometry>
+            <heightmap>
+              <uri>terrain_AW3D30_crop.png</uri>
+              <size>1500 1336.36 41</size>
+              <pos>0 0 0</pos>
+              <use_terrain_paging>false</use_terrain_paging>
+              <sampling>1</sampling>
+            </heightmap>
+          </geometry>
+        </collision>
+
+        <visual name="terrain_visual">
+          <cast_shadows>false</cast_shadows>
+          <geometry>
+            <heightmap>
+              <uri>terrain_AW3D30_crop.png</uri>
+              <size>1500 1336.36 41</size>
+              <pos>0 0 0</pos>
+              <use_terrain_paging>false</use_terrain_paging>
+              <sampling>1</sampling>
+            </heightmap>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

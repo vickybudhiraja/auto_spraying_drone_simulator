@@ -35,7 +35,7 @@ docker run --rm -it --privileged \
     -e PX4_HOME_LON=77.2400333478031 \ 
     -e PX4_HOME_ALT=0 \
     -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
-    -v "/media/vicky/data/MyTraining/auto_spraying_drone_simulator/myworld:/opt/px4-gazebo/share/gz/worlds:ro" \
+    -v "/media/vicky/data/auto_spraying_drone_simulator/myworld:/opt/px4-gazebo/share/gz/worlds:ro" \
     px4io/px4-sitl-gazebo:latest
 
   ### With DEM AW3D30 terrain
@@ -50,7 +50,7 @@ docker run --rm -it --privileged \
     -e PX4_HOME_LON=77.27694444448068 \
     -e PX4_HOME_ALT=0 \
     -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
-    -v "/media/vicky/data/MyTraining/auto_spraying_drone_simulator/myworld:/opt/px4-gazebo/share/gz/worlds:ro" \
+    -v "/media/vicky/data/auto_spraying_drone_simulator/myworld:/opt/px4-gazebo/share/gz/worlds:ro" \
     px4io/px4-sitl-gazebo:latest  
 
 
@@ -63,7 +63,7 @@ docker run --rm -it --privileged \
   -e PX4_HOME_LAT=28.613333333325453 \
   -e PX4_HOME_LON=77.27694444448068 \
   -e PX4_HOME_ALT=0 \
-  -v "/media/vicky/data/MyTraining/auto_spraying_drone_simulator/myworld:/opt/px4-gazebo/share/gz/worlds:ro" \
+  -v "/media/vicky/data/auto_spraying_drone_simulator/myworld:/opt/px4-gazebo/share/gz/worlds:ro" \
   px4io/px4-sitl-gazebo:latest
 
 ### Starting the image bridge
@@ -87,8 +87,12 @@ docker run --rm -it --privileged \
   -e PX4_HOME_LAT=28.613333333325453 \
   -e PX4_HOME_LON=77.27694444448068 \
   -e PX4_HOME_ALT=0 \
-  -v "/media/vicky/data/MyTraining/auto_spraying_drone_simulator/myworld:/opt/px4-gazebo/share/gz/worlds:ro" \
+  -v "/media/vicky/data/auto_spraying_drone_simulator/myworld:/opt/px4-gazebo/share/gz/worlds:ro" \
   px4io/px4-sitl-gazebo:latest
 
 
   docker run --rm -it   --network host   --gpus all   -e DISPLAY=$DISPLAY   -e NVIDIA_VISIBLE_DEVICES=all   -e NVIDIA_DRIVER_CAPABILITIES=all   -e PX4_SIM_MODEL=gz_x500_mono_cam_down   -e PX4_GZ_WORLD=real_terrain   -e PX4_HOME_LAT=28.613333333325453   -e PX4_HOME_LON=77.27694444448068   -e PX4_HOME_ALT=0   -v /tmp/.X11-unix:/tmp/.X11-unix:ro   -v "/media/vicky/data/MyTraining/auto_spraying_drone_simulator/myworld:/opt/px4-gazebo/share/gz/worlds:ro"   px4io/px4-sitl-gazebo:latest 
+
+
+gdalinfo -stats terrain_AW3D30.tif
+gdalinfo -stats terrain_AW3D30_crop.tif

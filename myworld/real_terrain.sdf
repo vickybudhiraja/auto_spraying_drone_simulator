@@ -33,8 +33,8 @@
         <collision name="terrain_collision">
           <geometry>
             <heightmap>
-              <uri>terrain_AW3D30_crop.png</uri>
-              <size>1500 1336.36 41</size>
+              <uri>terrain_AW3D30.tif</uri>
+              <size>14520 10020 260.5</size>
               <pos>0 0 0</pos>
               <use_terrain_paging>false</use_terrain_paging>
               <sampling>1</sampling>
@@ -46,9 +46,9 @@
           <cast_shadows>false</cast_shadows>
           <geometry>
             <heightmap>
-              <uri>terrain_AW3D30_crop.png</uri>
-              <size>1500 1336.36 41</size>
-              <pos>0 0 0</pos>
+              <uri>terrain_AW3D30.tif</uri>
+              <size>1500 1035 115</size>
+              <pos>0 0 -302</pos>
               <use_terrain_paging>false</use_terrain_paging>
               <sampling>1</sampling>
             </heightmap>

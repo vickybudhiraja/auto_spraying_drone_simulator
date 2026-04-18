@@ -2,3 +2,7 @@ outputs/**
 *.png
 *.tif
 *.tar.gz
+*.asc
+*.*.xml
+*.prj
+*.*.*.xml
